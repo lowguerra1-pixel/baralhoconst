@@ -20,7 +20,11 @@ window.CFG = {
 
   // Link discreto de "já comprei, quero acessar" no rodapé.
   // Vazio = o link não existe. A copy já diz que o acesso chega por e-mail.
-  MEMBROS_URL: ""
+  MEMBROS_URL: "",
+
+  // Para onde vai o "NÃO, QUERO DEIXAR PASSAR" (recusa final).
+  // Ex.: sua página de obrigado / área de membros. Ajuste para a sua.
+  NO_THANKS_URL: "/obrigado/"
 };
 </script>
 
@@ -33,6 +37,9 @@ window.CFG = {
   --gold-dark:#A9842F;
   --ok:#0F7A52;
   --no:#9B2C22;
+  --no-dark:#7C2018;
+  --buy:#1E9E57;
+  --buy-dark:#15733F;
   --line:#E6DED2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -123,14 +130,24 @@ ul.no li:before{content:"\2715";background:#F6E7E5;color:var(--no);font-size:11p
 
 .cta{
   display:block;width:100%;
-  background:var(--gold);color:#2A1A10;
+  background:var(--buy);color:#fff;
   border:0;border-radius:12px;padding:19px 18px;
   font-size:17px;font-weight:800;letter-spacing:.01em;
   text-align:center;text-decoration:none;
-  box-shadow:0 4px 0 var(--gold-dark);cursor:pointer;
+  box-shadow:0 4px 0 var(--buy-dark);cursor:pointer;
   margin-top:22px;
 }
-.cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--gold-dark)}
+.cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--buy-dark)}
+.cta-no{
+  display:block;width:100%;
+  background:var(--no);color:#fff;
+  border:0;border-radius:12px;padding:16px 18px;
+  font-size:15.5px;font-weight:800;letter-spacing:.02em;
+  text-align:center;text-decoration:none;
+  box-shadow:0 4px 0 var(--no-dark);cursor:pointer;
+  margin-top:14px;
+}
+.cta-no:active{transform:translateY(3px);box-shadow:0 1px 0 var(--no-dark)}
 .pay-note{
   font-size:13.5px;color:var(--ink-soft);line-height:1.5;
   margin-top:14px;text-align:left;
@@ -219,6 +236,8 @@ ul.no li:before{content:"\2715";background:#F6E7E5;color:var(--no);font-size:11p
       No cartão é um clique só. No Pix você preenche os dados, o código aparece na
       tela e em menos de um minuto está liberado — na mesma área onde o seu baralho chega.
     </p>
+
+    <a class="cta-no" id="noThanks" href="#">NÃO, QUERO DEIXAR PASSAR</a>
   </div>
 
   <h2>Garantia de 14 dias</h2>
@@ -272,6 +291,12 @@ ul.no li:before{content:"\2715";background:#F6E7E5;color:var(--no);font-size:11p
   cta.href=C.CHECKOUT_URL||'#';
   cta.addEventListener('click',function(){
     (window.dataLayer=window.dataLayer||[]).push({event:'cta_clique',pagina:'downsell_2'});
+  });
+
+  var nt=document.getElementById('noThanks');
+  nt.href=C.NO_THANKS_URL||'#';
+  nt.addEventListener('click',function(){
+    (window.dataLayer=window.dataLayer||[]).push({event:'recusa_clique',pagina:'downsell_2'});
   });
 
   if(C.MEMBROS_URL){
