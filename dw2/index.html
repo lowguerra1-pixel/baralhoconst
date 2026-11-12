@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Última página — Constelação com Baralho</title>
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://server1.onlinechoice.site/bbjarmxmnc.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','8=CgpQPzk%2FTCckOSAsNSYlTBVTX1ZcVAUEXgEDFAQcBAkLAQQbCFwSAxcL');</script>
+<!-- End Google Tag Manager -->
+
+<!-- ============================================================
+     CONFIGURAÇÃO — mexa só aqui
+     ============================================================ -->
+<script>
+window.CFG = {
+  // Link de checkout one-click da Lastlink para o DOWNSELL 2
+  CHECKOUT_URL: "https://lastlink.com/p/C642BBEF2/checkout-payment/",
+
+  // Link discreto de "já comprei, quero acessar" no rodapé.
+  // Vazio = o link não existe. A copy já diz que o acesso chega por e-mail.
+  MEMBROS_URL: ""
+};
+</script>
+
+<style>
+:root{
+  --bg:#FAF7F2;
+  --ink:#2E1B33;
+  --ink-soft:#6B5A70;
+  --gold:#C9A24A;
+  --gold-dark:#A9842F;
+  --ok:#0F7A52;
+  --no:#9B2C22;
+  --line:#E6DED2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.62;
+  padding:28px 18px 48px;
+  display:flex;justify-content:center;
+}
+.wrap{width:100%;max-width:540px}
+
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:#FBF1DA;color:var(--gold-dark);
+  font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:7px 13px;border-radius:999px;
+}
+.chip svg{width:13px;height:13px;flex:none}
+
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(27px,6.8vw,37px);line-height:1.15;letter-spacing:-.012em;
+  font-weight:700;margin:18px 0 13px;
+}
+h1 em{font-style:normal;color:var(--gold-dark)}
+
+.sub{
+  font-size:18.5px;color:var(--ink-soft);line-height:1.45;
+  margin-bottom:30px;
+}
+.sub strong{color:var(--ink);font-weight:600}
+
+h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:20px;line-height:1.3;font-weight:700;
+  margin:36px 0 13px;
+}
+
+p{margin-bottom:15px;font-size:17px}
+p.last{margin-bottom:0}
+
+hr{border:0;height:1px;background:var(--line);margin:32px 0}
+
+/* ---- listas ---- */
+ul{list-style:none;margin:4px 0 0}
+ul li{
+  position:relative;padding-left:31px;margin-bottom:13px;font-size:16.5px;
+}
+ul li em{font-style:normal;color:var(--ink-soft)}
+ul li:before{
+  position:absolute;left:0;top:0;
+  width:21px;height:21px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:12px;font-weight:800;
+}
+ul.yes li:before{content:"\2713";background:#E8F3ED;color:var(--ok)}
+ul.no li{color:var(--ink-soft)}
+ul.no li:before{content:"\2715";background:#F6E7E5;color:var(--no);font-size:11px}
+
+.block-no{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:19px 20px 8px;margin-top:18px;
+}
+.block-no .t{
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:12px;
+}
+
+/* ---- preço ---- */
+.box{
+  background:#fff;border:1px solid var(--line);border-radius:15px;
+  padding:28px 24px;margin:32px 0 0;
+  box-shadow:0 2px 16px rgba(46,27,51,.06);
+  text-align:center;
+}
+.box .price{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:58px;line-height:1;font-weight:700;letter-spacing:-.02em;
+}
+.box .price span{font-size:24px;vertical-align:.42em;margin-right:4px;color:var(--ink-soft)}
+.box .parcel{font-size:15px;color:var(--ink-soft);margin:8px 0 18px}
+.box .compare{
+  font-size:14.5px;color:var(--ink-soft);line-height:1.5;
+  padding-top:16px;margin-top:4px;border-top:1px solid var(--line);
+}
+
+.cta{
+  display:block;width:100%;
+  background:var(--gold);color:#2A1A10;
+  border:0;border-radius:12px;padding:19px 18px;
+  font-size:17px;font-weight:800;letter-spacing:.01em;
+  text-align:center;text-decoration:none;
+  box-shadow:0 4px 0 var(--gold-dark);cursor:pointer;
+  margin-top:22px;
+}
+.cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--gold-dark)}
+.pay-note{
+  font-size:13.5px;color:var(--ink-soft);line-height:1.5;
+  margin-top:14px;text-align:left;
+}
+
+.note{
+  display:flex;gap:12px;align-items:flex-start;
+  background:#E8F3ED;border-radius:12px;padding:16px 17px;
+  font-size:15.5px;color:#14543C;line-height:1.55;margin:30px 0 0;
+}
+.note svg{width:17px;height:17px;flex:none;margin-top:4px;fill:var(--ok)}
+
+.saida{
+  background:#F2EDE4;border-radius:13px;
+  padding:24px 22px;margin-top:34px;
+}
+.saida p{font-size:16.5px}
+
+.membros{
+  display:block;text-align:center;margin-top:26px;
+  font-size:14px;color:var(--ink-soft);
+  text-decoration:underline;text-underline-offset:3px;
+}
+.membros:hover{color:var(--ink)}
+
+.legal{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:11.5px;color:#9A8E9E;text-align:center;line-height:1.6;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="chip">
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1zM7.2 5.8v4h1.6v-4zm0 5.2v1.6h1.6V11z"/></svg>
+    Última página
+  </span>
+
+  <h1>Última página. E dessa vez eu <em>tirei tudo</em> que não é essencial.</h1>
+
+  <p class="sub">
+    Só o curso, o encontro de abertura e a sua entrada no sorteio — <strong>por R$&nbsp;47</strong>.
+  </p>
+
+  <hr>
+
+  <p>Você disse não duas vezes, e eu não vou insistir.</p>
+
+  <p>
+    Mas você ainda está aqui. E quem fecha três páginas seguidas não costuma chegar
+    até a terceira — o que me diz que o problema nunca foi o curso. Foi o valor.
+  </p>
+
+  <p>
+    Então em vez de te oferecer a mesma coisa com um laço diferente, eu tirei tudo
+    que não é essencial e deixei só o que ensina.
+  </p>
+
+  <h2>O que você leva</h2>
+  <ul class="yes">
+    <li><strong>O curso completo</strong> — 47 aulas, 10 módulos</li>
+    <li><strong>Os 18 materiais em PDF</strong> — os mesmos das páginas anteriores</li>
+    <li><strong>O primeiro encontro da Mesa Aberta</strong>, na semana que vem — onde você já pode trazer a sua primeira dúvida</li>
+    <li><strong>A sua entrada no sorteio</strong> do baralho impresso</li>
+  </ul>
+
+  <div class="block-no">
+    <div class="t">O que não vem</div>
+    <ul class="no">
+      <li>Os quatro bônus — eles são das páginas anteriores, e eu não vou fingir o contrário</li>
+      <li>Os três meses de Mesa Aberta — aqui é só o primeiro encontro</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <div class="price"><span>R$</span>47</div>
+    <div class="parcel">à vista, ou 10× de R$&nbsp;5,79 no cartão</div>
+    <div class="compare">
+      É menos do que você já pagou no baralho e no order bump que estão no seu pedido.
+    </div>
+
+    <a class="cta" id="cta" href="#">QUERO O CURSO POR R$ 47</a>
+
+    <p class="pay-note">
+      No cartão é um clique só. No Pix você preenche os dados, o código aparece na
+      tela e em menos de um minuto está liberado — na mesma área onde o seu baralho chega.
+    </p>
+  </div>
+
+  <h2>Garantia de 14 dias</h2>
+  <p>
+    Você entra, assiste, imprime o seu baralho e faz a sua primeira tiragem.
+    Se olhar e achar que não era pra você, manda uma mensagem e eu devolvo.
+    Sem pergunta, sem formulário.
+  </p>
+  <p>
+    E o baralho fica com você de qualquer jeito. Ele é seu, foi comprado,
+    eu não encosto nele.
+  </p>
+
+  <div class="note">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.3 12.1 2.5 8.3l1.3-1.3 2.5 2.5 6-6 1.3 1.3z"/></svg>
+    <span>
+      Na semana que vem a gente sorteia um baralho completo, impresso e cortado,
+      entregue na casa de uma aluna. O sorteio acontece exatamente no encontro de
+      abertura que está incluído aqui. Quem entra por esta página está nele e concorre
+      junto com todo mundo. A gente avisa no WhatsApp com dia e hora.
+    </span>
+  </div>
+
+  <div class="saida">
+    <p>E se ainda assim não for a hora, está tudo bem de verdade.</p>
+    <p>
+      Você já tem o baralho. Ele funciona sozinho, e eu falei isso desde o primeiro
+      vídeo: as 250 cartas, as 7 tiragens e o Manual do Campo dão conta do trabalho
+      sem mais nada.
+    </p>
+    <p class="last">
+      Pode fechar esta página tranquila. Sua compra está certa e o acesso já está
+      no seu e-mail.
+    </p>
+  </div>
+
+  <a class="membros" id="membros" href="#">Já comprei — quero ir para a minha área de membros.</a>
+
+  <p class="legal">
+    Constelação com Baralho: o Método Completo · acesso imediato · garantia de 14 dias
+  </p>
+
+</div>
+
+<script>
+(function(){
+  var C=window.CFG||{};
+  var cta=document.getElementById('cta');
+  var mb=document.getElementById('membros');
+
+  cta.href=C.CHECKOUT_URL||'#';
+  cta.addEventListener('click',function(){
+    (window.dataLayer=window.dataLayer||[]).push({event:'cta_clique',pagina:'downsell_2'});
+  });
+
+  if(C.MEMBROS_URL){
+    mb.href=C.MEMBROS_URL;
+    mb.addEventListener('click',function(){
+      (window.dataLayer=window.dataLayer||[]).push({event:'recusa',pagina:'downsell_2'});
+    });
+  }else{
+    mb.parentNode.removeChild(mb);
+  }
+})();
+</script>
+</body>
+</html>
