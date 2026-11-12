@@ -97,11 +97,11 @@ h1 em{font-style:normal;color:var(--gold-dark)}
 /* ------------------------------------------------------------------
    O VTURB REVELA ESTE BLOCO.
    No painel do player: Tipo de botão → "Mostrar conteúdo oculto"
-   → informar a classe ou o ID:  pitch
+   → Tipo de CSS: Class → pitch
    Deixe o display:none simples. Nada de !important: o VTurb precisa
    conseguir sobrescrever esta regra.
    ------------------------------------------------------------------ */
-#pitch{display:none;margin-top:26px;animation:up .45s ease both}
+.pitch{display:none;margin-top:26px;animation:up .45s ease both}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 .cta{
@@ -164,11 +164,6 @@ h1 em{font-style:normal;color:var(--gold-dark)}
     <a class="no-thanks" id="noThanks" href="#">Não, obrigado</a>
   </div>
 
-  <p class="legal">
-    Pagamento único. Acesso imediato na área de membros.<br>
-    Catorze dias de garantia — se não servir pra você, devolvemos.
-  </p>
-
 </div>
 
 <script>
@@ -190,27 +185,6 @@ h1 em{font-style:normal;color:var(--gold-dark)}
     if(getComputedStyle(pitch).display!=='none'){clearInterval(olho);dl('pitch_revelado');}
   },400);
 
-  function temVideo(raiz){
-    raiz=raiz||document;
-    try{
-      if(raiz.querySelector('video'))return true;
-      var t=raiz.querySelectorAll('*');
-      for(var i=0;i<t.length;i++){
-        if(t[i].shadowRoot&&temVideo(t[i].shadowRoot))return true;
-      }
-    }catch(e){}
-    return false;
-  }
-
-  /* Rede de segurança — a única coisa que a página decide sozinha.
-     Se depois de 25 s não existe nenhum <video> na tela, o player não
-     carregou. Sem player não há vídeo pra assistir nem botão pra clicar,
-     e a pessoa fica presa. Então libera. */
-  setTimeout(function(){
-    if(temVideo())return;
-    pitch.style.display='block';
-    dl('player_nao_carregou');
-  },25000);
 })();
 </script>
 </body>
